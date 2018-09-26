@@ -73,7 +73,12 @@ If one file is affected in both branches since common ancestor you will need to 
 git checkout SOME_BRANCH
 git rebase -i ANOTHER_BRANCH
 ```
-**rebase -i** - interactive rebase. You will be able to changed your branch during rebase.
+**rebase -i** - interactive rebase. You will be able to changed your branch during rebase.  
+Rebase changes history. If you push after rebase, you will need to push with force:
+```bash
+git push -f
+```
+Be careful to use **push -f** only when necessary  
 Rebase is extremely powerful. Please read [[good rebase guide (rus)]](https://habr.com/post/161009/)
 
 ---
