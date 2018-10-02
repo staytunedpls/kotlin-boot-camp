@@ -37,8 +37,7 @@ fun max(values: List<Int>): Int? = values.max()
  */
 
 fun sum(values: List<Int>): Long {
-    var fullSum : Long = 0
+    var fullSum: Long = 0
     values.forEach { fullSum += it }
     return fullSum
 }
-
