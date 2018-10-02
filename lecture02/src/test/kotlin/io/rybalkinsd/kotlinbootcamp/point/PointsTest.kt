@@ -36,18 +36,20 @@ class PointsTest {
 
     @Test
     fun `point # izZero extension`() {
-        assertTrue(Point(0, 0).isZero())
+        assertTrue(Point().isZero())
 
-        assertFalse(Point(0, 100).isZero())
+        assertFalse(Point(y = 100).isZero())
     }
 
     @Test
     fun `point # count non-zero points in list`() {
         assertEquals(
-            2,
-            listOf(Point(1, 2), Point(0, 0), Point(3, 5))
-                .filter { !it.isZero() }
-                .count()
+                2,
+                listOf(Point(1, 2),
+                        Point(0, 0),
+                        Point(3, 5))
+                        .filter { !it.isZero() }
+                        .count()
         )
     }
 

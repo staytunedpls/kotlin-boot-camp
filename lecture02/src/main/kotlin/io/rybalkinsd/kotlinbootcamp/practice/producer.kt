@@ -13,4 +13,15 @@ package io.rybalkinsd.kotlinbootcamp.practice
  * makeList(1, 0) = emptyList()
  *
  */
-fun makeList(from: Int, to: Int): List<Int> = TODO()
+fun makeList(from: Int, to: Int): List<Int> {
+    var counter = from
+    var result = mutableListOf<Int>()
+//    for (e in from..to) {
+//
+//    }
+//    while (counter <= to) {
+//        result.add(counter++)
+//    }
+//    return result
+    return (from..to).toList()
+}

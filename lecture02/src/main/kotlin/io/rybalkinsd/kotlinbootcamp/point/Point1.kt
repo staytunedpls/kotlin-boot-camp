@@ -7,5 +7,11 @@ class Point1 {
     }
 
     val x: Int
+    get() {
+        println("Kek")
+        return field
+    }
     val y: Int
+
+    override fun toString(): String = "Ulala"
 }
