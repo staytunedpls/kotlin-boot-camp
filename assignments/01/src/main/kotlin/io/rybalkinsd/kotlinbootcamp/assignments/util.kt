@@ -27,8 +27,6 @@ fun max(values: List<Int>): Int? = values.max()
 // This version falls on "medium size list test" - I guess because of large int values
 // fun sum(values: List<Int>): Long = values.sum().toLong()
 
-// This one is better:
-
 /**
  * Returns the sum of all `int` values.
  *
