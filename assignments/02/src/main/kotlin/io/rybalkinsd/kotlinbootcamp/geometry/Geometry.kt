@@ -26,7 +26,17 @@ data class Point(val x: Int, val y: Int) : Collider {
  * Bar is not oriented
  * (It does not matter, which opposite corners you choose to define bar)
  */
-data class Bar(val firstCornerX: Int, val firstCornerY: Int, val secondCornerX: Int, val secondCornerY: Int) : Collider {
+data class Bar(var firstCornerX: Int, var firstCornerY: Int, var secondCornerX: Int, var secondCornerY: Int) : Collider {
+    init {
+        val leftPointX: Int = minOf(this.firstCornerX, this.secondCornerX)
+        val rightPointX: Int = maxOf(this.firstCornerX, this.secondCornerX)
+        val leftPointY: Int = minOf(this.firstCornerY, this.secondCornerY)
+        val rightPointY: Int = maxOf(this.firstCornerY, this.secondCornerY)
+        this.firstCornerX = leftPointX
+        this.firstCornerY = leftPointY
+        this.secondCornerX = rightPointX
+        this.secondCornerY = rightPointY
+    }
     override fun isColliding(other: Collider): Boolean {
         when (other) {
             is Point -> {
@@ -35,9 +45,13 @@ data class Bar(val firstCornerX: Int, val firstCornerY: Int, val secondCornerX: 
                 return xInside && yInside
             }
             is Bar -> {
+
                 for (x in listOf(this.firstCornerX, this.secondCornerX))
                     for (y in listOf(this.firstCornerY, this.secondCornerY))
                         if (other.isColliding(Point(x, y))) return true
+                for (x in listOf(other.firstCornerX, other.secondCornerX))
+                    for (y in listOf(other.firstCornerY, other.secondCornerY))
+                        if (this.isColliding(Point(x, y))) return true
                 return false
             }
             else -> throw Exception("What argument did you provide to Bar.isColliding?")
