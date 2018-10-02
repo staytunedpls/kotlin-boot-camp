@@ -26,10 +26,7 @@ data class Point(val x: Int, val y: Int) : Collider {
  * Bar is not oriented
  * (It does not matter, which opposite corners you choose to define bar)
  */
-data class Bar(val firstCornerX: Int,
-               val firstCornerY: Int,
-               val secondCornerX: Int,
-               val secondCornerY: Int) : Collider {
+data class Bar(val firstCornerX: Int, val firstCornerY: Int, val secondCornerX: Int, val secondCornerY: Int) : Collider {
     override fun isColliding(other: Collider): Boolean {
         when (other) {
             is Point -> {
