@@ -11,9 +11,14 @@ class DataAnalysisTest {
     fun `check avg age`() {
         assertTrue(avgAge.isNotEmpty())
     }
-
     @Test
     fun `check grouped profiles`() {
         assertTrue(groupedProfiles.isNotEmpty())
+        println(profiles)
+        println(groupedProfiles)
+    }
+    @Test
+    fun `check profiles`() {
+        println(profiles)
     }
 }
