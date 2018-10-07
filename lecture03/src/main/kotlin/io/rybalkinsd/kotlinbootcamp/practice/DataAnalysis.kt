@@ -106,11 +106,17 @@ val rawProfiles = listOf(
             source=facebook
             """.trimIndent()
         ),
-
         RawProfile(
                 """
             lastName=carol,
-            source=vk,
+            source=linkedin,
+            age=49
+            """.trimIndent()
+        ),
+        RawProfile(
+                """
+            lastName=carol,
+            source=facebook,
             age=49
             """.trimIndent()
         ),
